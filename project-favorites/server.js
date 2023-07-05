@@ -10,7 +10,7 @@ http.createServer((req,res)=>{ //res = resposta do servido, req = requisiçoes
 
     const extname = path.extname(pathFile)//caputra a extenção do documento requizitado
 
-    const allowedFileTypes = ['.html','.css','.js','.png']// lista de extenção permitida 
+    const allowedFileTypes = ['.html','.css','.js', '.png']// lista de extenção permitida 
 
     const allowed = allowedFileTypes.find(item => item == extname)// testa se o item da lista de permitido é igual ao item requisitado
 

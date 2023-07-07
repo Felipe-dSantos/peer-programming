@@ -2,10 +2,6 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
-/*
-
-// Não se preocupem com esse pedaço de código comentado! Vamos descomentá-lo quando tivermos acabado de construir a API.
-
 // Função que carrega o conteúdo da API.
 async function load() {
     // fetch está como await para evitar que entre num esquema de promisse e só devolva o conteúdo após a iteração qua acontece em seguida.
@@ -16,65 +12,43 @@ async function load() {
 }
 
 load()
-*/
 
 function addElement({ name, url }) {
-    const btn = document.querySelector("#btn");
-
     const li = document.createElement('li')
-    const a = document.createElement('a')
-    const trash = document.createElement('span')
+    const a = document.createElement("a")
+    const trash = document.createElement("button")
 
     a.href = url
     a.innerHTML = name
     a.target = "_blank"
 
-    trash.innerHTML = 'x'
+    trash.innerHTML = "x"
     trash.onclick = () => removeElement(trash)
-
+    
+    ul.append(li)
     li.append(a)
     li.append(trash)
-    ul.append(li)
 
-    // btn.addEventListener("click", function (e) {
-    //     e.preventDefault();
+}
 
-    //     const a = document.createElement('a')
-    //     a.href = "url"
-    //     a.innerHTML = `${name}`
-    //     const b = document.createElement('button')
-    //     b.textContent = 'X'
+async function addElementAndSendToApi({ name, url }){
+    
+    addElement({ name, url })
 
-    //     document.getElementById('lista').appendChild(a)
-    //     document.getElementById('lista').appendChild(b)
+    const response = await fetch(`http://localhost:3000/?name=${name}&url=${url}`)
 
-    //     // document.body.appendChild(ul)
-
-    // })
-
-    // const li = document.createElement('li')
-
-    // criem os códigos
+    if (!response.ok) {
+        console.error(`Erro ao enviar os dados para a API: ${response.statusText}`)
+    }
 }
 
 function removeElement(element) {
-    if (confirm('deseja deletar?'))
+    if (confirm('Tem certeza que deseja deletar?'))
         element.parentNode.remove()
-
-
-    // const bt = document.querySelector('button');
-    // bt.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //     const ul = document.getElementById("lista");
-    //     const a = document.getElement(a)
-    //     parentNode.removeChild(a);
-
-    // })
-
 }
 
 form.addEventListener('submit', (event) => {
-
+    
     event.preventDefault();
 
     let { value } = input
@@ -90,7 +64,7 @@ form.addEventListener('submit', (event) => {
     if (!/^http/.test(url))
         return alert('Digite a url da maneira correta.')
 
-    addElement({ name, url })
+    addElementAndSendToApi({ name, url })
 
     input.value = ''
 

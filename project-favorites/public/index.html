@@ -12,15 +12,21 @@
 </head>
 
 <body>
-    <header>
-        <div id="logo">
-            <img src="./imagens/links-logo.png" alt="">
-        </div>
+    <!-- logo , busca e menu de navegação -->
+    <header class="grid-header">
         <div>
-            <span id="titulo"> Meus links</span>
+            <img src="./imagens/links.png" alt="">
+            
+        </div>
+        <div class="grid-busca">
+            <input type="text" name="busca" id="busca" placeholder="Bucar">
+            <nav>menu</nav>
         </div>
     </header>
-    <main>
+
+    <!-- lista de Links  -->
+    <main class="grid-main">
+        <!-- campo de entrada de dados -->
         <div id="form">
             <form id="formulario">
                 <input type="text" name="text" id="text"
@@ -28,11 +34,18 @@
             </form>
         </div>
         <ul id="lista">
-            <h4 id="titulo_lista">Nunca mais esqueça o link!</h4>
+            <h4 id="titulo_lista">NUNCA MAIS ESQUEÇA O LINK!</h4>
             <li><a href="" id="link"></a><a href="" id="bataa"></a></li>
-                
+
         </ul>
+
     </main>
+    <div class="grid-text">
+        <section>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, ab voluptas aperiam aut
+            porro? Inventore officiis ab impedit? Quaerat qui perspiciatis quasi, iste totam labore! Sapiente aliquid
+            ipsa dolor.</section>
+    </div>
+    <footer class="grid-footer"></footer>
 
 </body>
 

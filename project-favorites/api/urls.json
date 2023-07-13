@@ -1,24 +1,12 @@
 {
   "urls": [
     {
-      "name": "google112",
-      "url": "www.google.com11"
+      "name": "GOOGLE",
+      "url": "https://www.google.com/"
     },
     {
-      "name": "GitHub",
-      "url": "www.google.com"
-    },
-    {
-      "name": "ufac",
-      "url": "www.ufac.com"
-    },
-    {
-      "name": "google112",
-      "url": "www.google.com11"
-    },
-    {
-      "name": "Twitter",
-      "url": "http://twitter.com"
+      "name": "CHEK-IN",
+      "url": "https://projetowebacademy.online/labcheck/"
     },
     {
       "name": "YouTube",

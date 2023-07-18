@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap" rel="stylesheet">
+    <!-- menu -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- ligando no documento de estilo -->
     <link rel="stylesheet" href="style.css">
     <!-- ligando no documento de scripts -->
@@ -14,13 +21,20 @@
 <body>
     <!-- logo , busca e menu de navegação -->
     <header class="grid-header">
-        <div>
+        <div id="id-visual">
             <img src="./imagens/links.png" alt="">
-            
+            <span>Meus Links</span>
         </div>
-        <div class="grid-busca">
-            <input type="text" name="busca" id="busca" placeholder="Bucar">
-            <nav>menu</nav>
+        <div id="grid-busca">
+            <span id="burguer" class="material-symbols-outlined" >menu</span>
+            <nav id="itens">
+                <ul id="menu-lu">
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+            </nav>
+            <input type="text" name="busca" id="busca" placeholder="Buscar">
         </div>
     </header>
 
@@ -28,7 +42,7 @@
     <main class="grid-main">
         <!-- campo de entrada de dados -->
         <div id="form">
-            <form id="formulario">
+            <form>
                 <input type="text" name="text" id="text"
                     placeholder="Digite o nome do endereço e o endereço separados por virgula">
             </form>
@@ -36,17 +50,26 @@
         <ul id="lista">
             <h4 id="titulo_lista">NUNCA MAIS ESQUEÇA O LINK!</h4>
             <li><a href="" id="link"></a><a href="" id="bataa"></a></li>
-
         </ul>
 
+        <div id="grid-text">
+            <section id="texto">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, ab voluptas aperiam aut
+                porro? Inventore officiis ab impedit? Quaerat qui perspiciatis quasi, iste totam labore! Sapiente
+                aliquid
+                ipsa dolor.
+            </section>
+            <section id="video">
+                <iframe src="https://www.youtube.com/embed/GPkHhehK7Ms&ab_channel=ge" frameborder="0"></iframe>
+            </section>
+            <section id="anuncio">
+                <p>Anuncio</p>
+            </section>
+        </div>
+
     </main>
-    <div class="grid-text">
-        <section>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse, ab voluptas aperiam aut
-            porro? Inventore officiis ab impedit? Quaerat qui perspiciatis quasi, iste totam labore! Sapiente aliquid
-            ipsa dolor.</section>
-    </div>
-    <footer class="grid-footer"></footer>
 
 </body>
 
 </html>
+
